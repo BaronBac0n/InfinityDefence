@@ -17,13 +17,19 @@ public class PlayerRotate : MonoBehaviourPunCallbacks, IPunObservable
 
     PlayerManager playerManager;
 
-    private void Awake()
+    #region Singleton
+    public static PlayerRotate instance;
+
+    void Awake()
     {
-        if(SceneManager.GetActiveScene().name == "SampleScene")
+        if (instance != null)
         {
-            PhotonNetwork.OfflineMode = true;
+            Debug.LogWarning("More than one instance of PlayerRotate found");
+            return;
         }
+        instance = this;
     }
+    #endregion
 
     private void Start()
     {

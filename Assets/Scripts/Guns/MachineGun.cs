@@ -24,7 +24,7 @@ public class MachineGun : Gun
     {
         if (!pV.IsMine)
             return;
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Idle") && ShopManager.instance.shopPanel.activeInHierarchy == false)
         {
             canShoot = true;
         }
