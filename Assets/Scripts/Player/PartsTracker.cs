@@ -21,10 +21,11 @@ public class PartsTracker : MonoBehaviour
 
     public int parts;
 
-    public Text partsText;
+    Text partsText;
 
     private void Start()
     {
+        partsText = GetComponent<Text>();
         UpdateText();
     }
 

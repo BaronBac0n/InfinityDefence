@@ -59,10 +59,8 @@ public class Enemy : MonoBehaviour
     [PunRPC]
     void RPC_TakeDamage(int amount)
     {
-        print("A");
         if (!pV.IsMine)
             return;
-        print("B");
         currentHealth -= amount;
         if (currentHealth <= 0)
         {
@@ -72,7 +70,7 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
-        //PartsTracker.instance.AddParts(partsDropped);
+        PartsTracker.instance.AddParts(partsDropped);
         PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Explosion_01"), transform.position, transform.rotation);
         PhotonNetwork.Destroy(gameObject);
     }

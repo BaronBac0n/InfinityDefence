@@ -43,10 +43,8 @@ public class EnemySpawner : MonoBehaviour
     [PunRPC]
     void RPC_SpawnEnemy()
     {
-        print("A");
         if (!pV.IsMine)
             return;
-        print("B");
 
         //choose a random spawner
         Transform chosenSpawner = enemySpawns[Random.Range(0, enemySpawns.Length)];

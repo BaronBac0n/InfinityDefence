@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - EnemyTarget
+  - Enemy
+  - Left ammo count
+  - Right ammo count
+  - Camera Holder
+  - LeftGun
+  - RightGun
   layers:
   - Default
   - TransparentFX

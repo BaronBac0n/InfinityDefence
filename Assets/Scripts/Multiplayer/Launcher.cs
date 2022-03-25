@@ -42,6 +42,9 @@ public class Launcher : MonoBehaviourPunCallbacks
     GameObject playerListItemPrefab;
     
     public string gameSceneName;
+    public string haydenTestSceneName;
+    public string samTestSceneName;
+    public string joshSceneName;
 
     [SerializeField]
     Button startGameButton;
@@ -142,6 +145,21 @@ public class Launcher : MonoBehaviourPunCallbacks
     public void StartGame()
     {
         PhotonNetwork.LoadLevel(gameSceneName);
+    }
+
+    public void StartHaydenTest()
+    {
+        PhotonNetwork.LoadLevel(haydenTestSceneName);
+    }
+
+    public void StartSamTest()
+    {
+        PhotonNetwork.LoadLevel(samTestSceneName);
+    }
+
+    public void StartJoshTest()
+    {
+        PhotonNetwork.LoadLevel(joshSceneName);
     }
 
     public override void OnMasterClientSwitched(Player newMasterClient)
