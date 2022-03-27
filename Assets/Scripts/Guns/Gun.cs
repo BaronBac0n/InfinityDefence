@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public abstract class Gun : MonoBehaviour
 {
+    public string gunName;
     public bool isLeftGun;
     public int damage = 10;
     public float range;

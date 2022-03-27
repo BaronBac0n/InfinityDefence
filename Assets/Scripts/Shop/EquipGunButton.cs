@@ -7,6 +7,8 @@ public class EquipGunButton : MonoBehaviour
 {
 
     public Gun gunInButton;
+    public GameObject leftGunHolder;
+    public Gun[] playerLeftGuns;
 
     Image gunSprite;
 
@@ -33,6 +35,32 @@ public class EquipGunButton : MonoBehaviour
         {
             equipLeft.GetComponentInChildren<Text>().text = "Equip Left";
             equipRight.GetComponentInChildren<Text>().text = "Equip Right";
+        }
+
+
+    }
+
+    public void OnEquipLeft()
+    {
+        leftGunHolder = GameObject.FindGameObjectWithTag("LeftGun");
+
+        //set up the player gun array
+        int children = leftGunHolder.transform.childCount;
+        for (int i = 0; i < children; i++)
+        {
+            playerLeftGuns[i] = leftGunHolder.transform.GetChild(i).gameObject.GetComponent<Gun>();
+        }
+
+        //set all guns disabled
+        for (int i = 0; i < playerLeftGuns.Length; i++)
+        {
+            playerLeftGuns[i].gameObject.SetActive(false);
+        }
+
+        for (int i = 0; i < playerLeftGuns.Length; i++)
+        {
+            if (playerLeftGuns[i].gunName == gunInButton.gunName)
+                playerLeftGuns[i].gameObject.SetActive(true);
         }
     }
 }

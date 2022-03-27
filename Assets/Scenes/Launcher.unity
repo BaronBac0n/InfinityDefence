@@ -3891,19 +3891,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8511949988331575409, guid: 9c88566d602f9c5459b49359227eaa04, type: 3}
       propertyPath: sceneViewId
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4061797117253814628, guid: 9c88566d602f9c5459b49359227eaa04, type: 3}
       propertyPath: sceneViewId
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4695901538081992888, guid: 9c88566d602f9c5459b49359227eaa04, type: 3}
+      propertyPath: sceneViewId
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6884677151500435734, guid: 9c88566d602f9c5459b49359227eaa04, type: 3}
       propertyPath: sceneViewId
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7992232531984461565, guid: 9c88566d602f9c5459b49359227eaa04, type: 3}
       propertyPath: sceneViewId
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8068740823391977810, guid: 9c88566d602f9c5459b49359227eaa04, type: 3}
       propertyPath: m_RootOrder
@@ -3955,7 +3959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8068740823391977811, guid: 9c88566d602f9c5459b49359227eaa04, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c88566d602f9c5459b49359227eaa04, type: 3}
