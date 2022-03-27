@@ -800,8 +800,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunInButton: {fileID: 3141225742875765710, guid: cb7e4cfe144ff344eae7ea70b56620fb, type: 3}
-  leftGunHolder: {fileID: 0}
-  playerLeftGuns: []
 --- !u!1 &2027047133484424258
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,10 +942,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunInButton: {fileID: 5699094619940198814, guid: 8d5fb56dc87e9c447b208655fc349153, type: 3}
-  leftGunHolder: {fileID: 0}
-  playerLeftGuns:
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &2778135940799140088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3818,6 +3812,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopPanel: {fileID: 4607550525499101325}
   showShopButton: {fileID: 8506488474861984865}
+  playerLeftGunHolder: {fileID: 0}
+  playerLeftGuns:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &8656134562920627142
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,14 +22,21 @@ public class ShopManager : MonoBehaviour
 
     public GameObject showShopButton;
 
+    [HideInInspector]
+    public GameObject playerLeftGunHolder;
+    
+    public Gun[] playerLeftGuns;
+
     void Start()
     {
-        
-    }
-    
-    void Update()
-    {
-        
+        playerLeftGunHolder = GameObject.FindGameObjectWithTag("LeftGun");
+
+        //set up the player gun array
+        int children = playerLeftGunHolder.transform.childCount;
+        for (int i = 0; i < children; i++)
+        {
+            playerLeftGuns[i] = playerLeftGunHolder.transform.GetChild(i).gameObject.GetComponent<Gun>();
+        }
     }
 
     public void ShowShop()
