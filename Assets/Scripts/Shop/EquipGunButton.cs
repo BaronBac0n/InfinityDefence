@@ -54,4 +54,22 @@ public class EquipGunButton : MonoBehaviour
                 leftGuns[i].gameObject.SetActive(true);
         }
     }
+
+    public void OnEquipRight()
+    {
+
+        Gun[] rightGuns = ShopManager.instance.playerRightGuns;
+
+        //set all guns disabled
+        for (int i = 0; i < rightGuns.Length; i++)
+        {
+            rightGuns[i].gameObject.SetActive(false);
+        }
+
+        for (int i = 0; i < rightGuns.Length; i++)
+        {
+            if (rightGuns[i].gunName == gunInButton.gunName)
+                rightGuns[i].gameObject.SetActive(true);
+        }
+    }
 }

@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d49b24b6331020498783b49682ed414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunName: 
+  gunName: Laser
   isLeftGun: 0
   damage: 10
   range: 0
@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 7720478427868541951}
   m_Layer: 0
   m_Name: Right guns
-  m_TagString: Untagged
+  m_TagString: RightGun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -349,11 +349,11 @@ GameObject:
   - component: {fileID: 4061797117253814628}
   m_Layer: 0
   m_Name: Machinegun R
-  m_TagString: RightGun
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8068740822069707966
 Transform:
   m_ObjectHideFlags: 0
@@ -446,7 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d49b24b6331020498783b49682ed414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunName: 
+  gunName: Machine Gun
   isLeftGun: 0
   damage: 10
   range: 0
@@ -1478,6 +1478,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 3141225742875765710, guid: cb7e4cfe144ff344eae7ea70b56620fb, type: 3}
+      propertyPath: gunName
+      value: Machine Gun
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb7e4cfe144ff344eae7ea70b56620fb, type: 3}
 --- !u!4 &2951091642252000961 stripped
@@ -1498,7 +1502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1949581470975934, guid: 8fcfcea89e1a94bac8fb25b52cff96fe, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4573303353423536, guid: 8fcfcea89e1a94bac8fb25b52cff96fe, type: 3}
       propertyPath: m_RootOrder

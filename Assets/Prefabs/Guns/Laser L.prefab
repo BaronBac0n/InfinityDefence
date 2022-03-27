@@ -4813,7 +4813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d49b24b6331020498783b49682ed414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunName: MachineGun
+  gunName: Laser
   isLeftGun: 1
   damage: 10
   range: 0

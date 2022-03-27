@@ -23,20 +23,16 @@ public class ShopManager : MonoBehaviour
     public GameObject showShopButton;
 
     [HideInInspector]
-    public GameObject playerLeftGunHolder;
-    
+    public GameObject playerLeftGunHolder;    
     public Gun[] playerLeftGuns;
+    
+    public GameObject playerRightGunHolder;    
+    public Gun[] playerRightGuns;
 
     void Start()
     {
-        playerLeftGunHolder = GameObject.FindGameObjectWithTag("LeftGun");
-
-        //set up the player gun array
-        int children = playerLeftGunHolder.transform.childCount;
-        for (int i = 0; i < children; i++)
-        {
-            playerLeftGuns[i] = playerLeftGunHolder.transform.GetChild(i).gameObject.GetComponent<Gun>();
-        }
+        FindLeftGuns();
+        FindRightGuns();
     }
 
     public void ShowShop()
@@ -51,6 +47,31 @@ public class ShopManager : MonoBehaviour
         shopPanel.SetActive(false);
         showShopButton.SetActive(true);
         PlayerRotate.instance.enabled = true;
+    }
+
+    public void FindLeftGuns()
+    {
+        playerLeftGunHolder = GameObject.FindGameObjectWithTag("LeftGun");
+
+        //set up the player gun array
+        int children = playerLeftGunHolder.transform.childCount;
+        for (int i = 0; i < children; i++)
+        {
+            playerLeftGuns[i] = playerLeftGunHolder.transform.GetChild(i).gameObject.GetComponent<Gun>();
+        }
+    }
+
+    public void FindRightGuns()
+    {
+        playerRightGunHolder = GameObject.FindGameObjectWithTag("RightGun");
+
+        //set up the player gun array
+        int children = playerRightGunHolder.transform.childCount;
+        print(children);
+        for (int i = 0; i < children; i++)
+        {
+            playerRightGuns[i] = playerRightGunHolder.transform.GetChild(i).gameObject.GetComponent<Gun>();
+        }
     }
 
 }
