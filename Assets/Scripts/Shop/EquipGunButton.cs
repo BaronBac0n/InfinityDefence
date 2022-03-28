@@ -85,7 +85,7 @@ public class EquipGunButton : MonoBehaviour
         }
         else
         {
-            print("Not enough parts");
+            StartCoroutine(PartsTracker.instance.FlashText());
         }
     }
 
@@ -129,7 +129,7 @@ public class EquipGunButton : MonoBehaviour
         }
         else
         {
-            print("Not enough parts");
+            StartCoroutine(PartsTracker.instance.FlashText());
         }
     }
 }

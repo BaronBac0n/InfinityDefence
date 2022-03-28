@@ -45,4 +45,17 @@ public class PartsTracker : MonoBehaviour
     {
         partsText.text = parts.ToString();
     }
+
+    public IEnumerator FlashText()
+    {
+        Color initColor = partsText.color;
+
+        partsText.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        partsText.color = initColor;
+        yield return new WaitForSeconds(0.1f);
+        partsText.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        partsText.color = initColor;
+    }
 }
