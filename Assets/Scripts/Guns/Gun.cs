@@ -12,6 +12,7 @@ public abstract class Gun : MonoBehaviour
     public float range;
     public float fireRate = 15;
     public float reloadTime = 15;
+    public bool isProjectileWeapon;
 
     public int cost;
 
@@ -31,7 +32,7 @@ public abstract class Gun : MonoBehaviour
 
     public ParticleSystem muzzleFlash;
 
-    public  float nextTimeToFire = 0;
+    public float nextTimeToFire = 0;
 
     [HideInInspector]
     public Animator anim;
@@ -99,63 +100,77 @@ public abstract class Gun : MonoBehaviour
             {
                 if (Input.GetAxis("Fire1") > 0.1f && Time.time >= nextTimeToFire)
                 {
-                    if (ammoInMag > 0)
+                    if (isProjectileWeapon)
                     {
-                        //shoot
-                        nextTimeToFire = Time.time + 1 / fireRate;
-                        Shoot();
-                        //anim.SetBool("isShooting", true);
+                        if (ammoInMag > 0)
+                        {
+                            //shoot
+                            nextTimeToFire = Time.time + 1 / fireRate;
+                            Shoot();
+                            //anim.SetBool("isShooting", true);
+                        }
+                        else
+                        {
+                            StartCoroutine(Reload());
+                        }
                     }
                     else
                     {
-                        StartCoroutine(Reload());
+                        if (ammoInMag > 0)
+                        {
+                            //shoot
+                            Shoot();
+                        }
+
                     }
-                }
-                else
-                {
-                    //anim.SetBool("isShooting", false);
                 }
             }
             else
             {
                 if (Input.GetAxis("Fire2") > 0.1f && Time.time >= nextTimeToFire)
                 {
-                    if (ammoInMag > 0)
+                    if (isProjectileWeapon)
                     {
-                        //shoot
-                        nextTimeToFire = Time.time + 1 / fireRate;
-                        Shoot();
-                        //anim.SetBool("isShooting", true);
+                        if (ammoInMag > 0)
+                        {
+                            //shoot
+                            nextTimeToFire = Time.time + 1 / fireRate;
+                            Shoot();
+                            //anim.SetBool("isShooting", true);
+                        }
+                        else
+                        {
+                            StartCoroutine(Reload());
+                        }
                     }
                     else
                     {
-                        StartCoroutine(Reload());
+                        if (ammoInMag > 0)
+                        {
+                            Shoot();
+                        }
                     }
                 }
-                else
-                {
-                    //anim.SetBool("isShooting", false);
-                }
+
             }
-
         }
-    }
 
-    IEnumerator Wait(float time)
-    {
-        yield return new WaitForSeconds(time);
-        //anim.SetBool("isShooting", false);
-    }
+        IEnumerator Wait(float time)
+        {
+            yield return new WaitForSeconds(time);
+            //anim.SetBool("isShooting", false);
+        }
 
-    IEnumerator Reload()
-    {
-        anim.SetBool("isReloading", true);
+        IEnumerator Reload()
+        {
+            anim.SetBool("isReloading", true);
 
-        reloading = true;
+            reloading = true;
 
-        yield return new WaitForSeconds(reloadTime);
-        anim.SetBool("isReloading", false);
-        ammoInMag = maxAmmoInMag;
-        reloading = false;
+            yield return new WaitForSeconds(reloadTime);
+            anim.SetBool("isReloading", false);
+            ammoInMag = maxAmmoInMag;
+            reloading = false;
+        }
     }
 }

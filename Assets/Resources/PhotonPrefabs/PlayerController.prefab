@@ -233,7 +233,7 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &6174383603122952250
+--- !u!114 &2797387218842674349
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4662578311906350096}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d49b24b6331020498783b49682ed414, type: 3}
+  m_Script: {fileID: 11500000, guid: b5619b089ebe2f64ea45736432bae8ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Laser
@@ -251,22 +251,23 @@ MonoBehaviour:
   range: 0
   fireRate: 15
   reloadTime: 1
+  isProjectileWeapon: 0
   cost: 20
   purchased: 0
   bulletSpeed: 10
-  maxAmmoInMag: 2147483647
-  ammoInMag: 2147483647
+  maxAmmoInMag: 99999999
+  ammoInMag: 99999999
   fpsCam: {fileID: 0}
   reloading: 0
-  projectileSpawner: {fileID: 1052702771731236982}
+  projectileSpawner: {fileID: 0}
   projectile: {fileID: 0}
-  muzzleFlash: {fileID: 2786343229120181826}
+  muzzleFlash: {fileID: 0}
   nextTimeToFire: 0
   anim: {fileID: 0}
   canShoot: 1
   ammoText: {fileID: 0}
-  sprite: {fileID: 21300000, guid: f05799050e9214bf8b999a1b0d6c6795, type: 3}
-  description: 
+  sprite: {fileID: 21300000, guid: a62501167c410449ebf7c4ab9cbed45a, type: 3}
+  description: shoots a laser
   pV: {fileID: 0}
 --- !u!1 &6254724755156212811
 GameObject:
@@ -452,6 +453,7 @@ MonoBehaviour:
   range: 0
   fireRate: 5
   reloadTime: 2
+  isProjectileWeapon: 1
   cost: 0
   purchased: 1
   bulletSpeed: 10
@@ -1258,7 +1260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3010483452154847105, guid: 8d5fb56dc87e9c447b208655fc349153, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3010483452154847105, guid: 8d5fb56dc87e9c447b208655fc349153, type: 3}
       propertyPath: m_TagString
@@ -1414,11 +1416,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 496128, guid: 9b26fa2878b249e4fa6b5ce4c8af718b, type: 3}
   m_PrefabInstance: {fileID: 2786343229139366146}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &2786343229120181826 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 19875648, guid: 9b26fa2878b249e4fa6b5ce4c8af718b, type: 3}
-  m_PrefabInstance: {fileID: 2786343229139366146}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3421613832670848774
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1476,7 +1473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1098043265679226739, guid: cb7e4cfe144ff344eae7ea70b56620fb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1098043265679226739, guid: cb7e4cfe144ff344eae7ea70b56620fb, type: 3}
       propertyPath: m_TagString
@@ -1492,6 +1489,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3141225742875765710, guid: cb7e4cfe144ff344eae7ea70b56620fb, type: 3}
       propertyPath: purchased
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141225742875765710, guid: cb7e4cfe144ff344eae7ea70b56620fb, type: 3}
+      propertyPath: isProjectileWeapon
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

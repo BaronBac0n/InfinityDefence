@@ -4757,7 +4757,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3013384207993728655}
   - component: {fileID: 4809279432517741423}
-  - component: {fileID: 5699094619940198814}
+  - component: {fileID: 6000571947781825172}
   - component: {fileID: 6448338859756216515}
   m_Layer: 0
   m_Name: Laser L
@@ -4801,7 +4801,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5699094619940198814
+--- !u!114 &6000571947781825172
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4810,7 +4810,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3010483452154847105}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d49b24b6331020498783b49682ed414, type: 3}
+  m_Script: {fileID: 11500000, guid: b5619b089ebe2f64ea45736432bae8ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Laser
@@ -4819,11 +4819,12 @@ MonoBehaviour:
   range: 0
   fireRate: 15
   reloadTime: 1
+  isProjectileWeapon: 0
   cost: 20
   purchased: 0
   bulletSpeed: 10
-  maxAmmoInMag: 2147483647
-  ammoInMag: 2147483647
+  maxAmmoInMag: 99999999
+  ammoInMag: 99999999
   fpsCam: {fileID: 0}
   reloading: 0
   projectileSpawner: {fileID: 2719832898554664952}
