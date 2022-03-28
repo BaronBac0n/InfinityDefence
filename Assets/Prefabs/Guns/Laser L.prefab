@@ -4819,7 +4819,7 @@ MonoBehaviour:
   range: 0
   fireRate: 15
   reloadTime: 1
-  cost: 0
+  cost: 20
   purchased: 0
   bulletSpeed: 10
   maxAmmoInMag: 2147483647

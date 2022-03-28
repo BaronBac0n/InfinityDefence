@@ -251,7 +251,7 @@ MonoBehaviour:
   range: 0
   fireRate: 15
   reloadTime: 1
-  cost: 0
+  cost: 20
   purchased: 0
   bulletSpeed: 10
   maxAmmoInMag: 2147483647
@@ -327,8 +327,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3397934698839641946}
   - {fileID: 2951091642252000961}
+  - {fileID: 3397934698839641946}
   m_Father: {fileID: 8068740822204607454}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -453,7 +453,7 @@ MonoBehaviour:
   fireRate: 5
   reloadTime: 2
   cost: 0
-  purchased: 0
+  purchased: 1
   bulletSpeed: 10
   maxAmmoInMag: 100
   ammoInMag: 100
@@ -1266,7 +1266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3013384207993728655, guid: 8d5fb56dc87e9c447b208655fc349153, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3013384207993728655, guid: 8d5fb56dc87e9c447b208655fc349153, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1306,6 +1306,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3013384207993728655, guid: 8d5fb56dc87e9c447b208655fc349153, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699094619940198814, guid: 8d5fb56dc87e9c447b208655fc349153, type: 3}
+      propertyPath: purchased
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1424,7 +1428,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 542791028128963015, guid: cb7e4cfe144ff344eae7ea70b56620fb, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 542791028128963015, guid: cb7e4cfe144ff344eae7ea70b56620fb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1479,8 +1483,16 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3141225742875765710, guid: cb7e4cfe144ff344eae7ea70b56620fb, type: 3}
+      propertyPath: cost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141225742875765710, guid: cb7e4cfe144ff344eae7ea70b56620fb, type: 3}
       propertyPath: gunName
       value: Machine Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141225742875765710, guid: cb7e4cfe144ff344eae7ea70b56620fb, type: 3}
+      propertyPath: purchased
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb7e4cfe144ff344eae7ea70b56620fb, type: 3}

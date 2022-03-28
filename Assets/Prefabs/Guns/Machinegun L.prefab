@@ -120,7 +120,7 @@ MonoBehaviour:
   range: 0
   fireRate: 5
   reloadTime: 2
-  cost: 0
+  cost: 10
   purchased: 0
   bulletSpeed: 10
   maxAmmoInMag: 100

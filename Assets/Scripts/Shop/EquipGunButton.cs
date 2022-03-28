@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class EquipGunButton : MonoBehaviour
 {
-
-    public Gun gunInButton;
+    public int buttonNumber;
+    public Gun LgunInButton;
+    public Gun RgunInButton;
 
     Image gunSprite;
 
@@ -16,60 +17,119 @@ public class EquipGunButton : MonoBehaviour
 
     private void Start()
     {
+        LgunInButton = ShopManager.instance.playerLeftGuns[buttonNumber];
+        RgunInButton = ShopManager.instance.playerRightGuns[buttonNumber];
+
         gunSprite = transform.GetChild(0).GetComponent<Image>();
         gunDescription = transform.GetChild(1).GetComponent<Text>();
         equipLeft = transform.GetChild(2).GetComponent<Button>();
         equipRight = transform.GetChild(3).GetComponent<Button>();
 
-        gunSprite.sprite = gunInButton.sprite;
-        gunDescription.text = gunInButton.description;
+        gunSprite.sprite = LgunInButton.sprite;
+        gunDescription.text = RgunInButton.description;
 
-        if (!gunInButton.purchased)
+        if (!LgunInButton.purchased)
         {
-            equipLeft.GetComponentInChildren<Text>().text = "Equip Left - " + gunInButton.cost.ToString();
-            equipRight.GetComponentInChildren<Text>().text = "Equip Right - " + gunInButton.cost.ToString();
+            equipLeft.GetComponentInChildren<Text>().text = "Equip Left - " + LgunInButton.cost.ToString();
+            equipRight.GetComponentInChildren<Text>().text = "Equip Right - " + LgunInButton.cost.ToString();
         }
         else
         {
-            equipLeft.GetComponentInChildren<Text>().text = "Equip Left";
-            equipRight.GetComponentInChildren<Text>().text = "Equip Right";
+            equipLeft.GetComponentInChildren<Text>().text = "Equipped";
+            equipLeft.interactable = false;
+
+            equipRight.GetComponentInChildren<Text>().text = "Equipped";
+            equipRight.interactable = false;
         }
-
-
     }
 
     public void OnEquipLeft()
     {
-        Gun[] leftGuns = ShopManager.instance.playerLeftGuns;
-
-        //set all guns disabled
-        for (int i = 0; i < leftGuns.Length; i++)
+        //check if we have enough to purchase
+        if (PartsTracker.instance.parts >= LgunInButton.cost)
         {
-            leftGuns[i].gameObject.SetActive(false);
+            //set all the equip buttons interactable and fix texts
+            EquipGunButton[] buttons = GameObject.FindObjectsOfType<EquipGunButton>();
+
+            for (int i = 0; i < buttons.Length; i++)
+            {
+                buttons[i].equipLeft.interactable = true;
+
+                if (buttons[i].LgunInButton.purchased)
+                    buttons[i].equipLeft.GetComponentInChildren<Text>().text = "Equip Left";
+                else
+                    buttons[i].equipLeft.GetComponentInChildren<Text>().text = "Equip Left - " + buttons[i].LgunInButton.cost.ToString();
+            }
+
+            if (!LgunInButton.purchased)
+                PartsTracker.instance.RemoveParts(LgunInButton.cost);
+
+            LgunInButton.purchased = true;
+            equipLeft.GetComponentInChildren<Text>().text = "Equipped";
+
+            equipLeft.interactable = false;
+
+            Gun[] leftGuns = ShopManager.instance.playerLeftGuns;
+
+            //set all guns disabled
+            for (int i = 0; i < leftGuns.Length; i++)
+            {
+                leftGuns[i].gameObject.SetActive(false);
+            }
+
+            for (int i = 0; i < leftGuns.Length; i++)
+            {
+                if (leftGuns[i].gunName == LgunInButton.gunName)
+                    leftGuns[i].gameObject.SetActive(true);
+            }
         }
-
-        for (int i = 0; i < leftGuns.Length; i++)
+        else
         {
-            if (leftGuns[i].gunName == gunInButton.gunName)
-                leftGuns[i].gameObject.SetActive(true);
+            print("Not enough parts");
         }
     }
 
     public void OnEquipRight()
     {
-
-        Gun[] rightGuns = ShopManager.instance.playerRightGuns;
-
-        //set all guns disabled
-        for (int i = 0; i < rightGuns.Length; i++)
+        if (PartsTracker.instance.parts >= RgunInButton.cost)
         {
-            rightGuns[i].gameObject.SetActive(false);
+            //set all the equip buttons interactable and fix texts
+            EquipGunButton[] buttons = GameObject.FindObjectsOfType<EquipGunButton>();
+
+            for (int i = 0; i < buttons.Length; i++)
+            {
+                buttons[i].equipRight.interactable = true;
+
+                if (buttons[i].RgunInButton.purchased)
+                    buttons[i].equipRight.GetComponentInChildren<Text>().text = "Equip Right";
+                else
+                    buttons[i].equipRight.GetComponentInChildren<Text>().text = "Equip Right - " + buttons[i].RgunInButton.cost.ToString();
+            }
+
+            if (!RgunInButton.purchased)
+                PartsTracker.instance.RemoveParts(RgunInButton.cost);
+
+            RgunInButton.purchased = true;
+            equipRight.GetComponentInChildren<Text>().text = "Equipped";
+            equipRight.interactable = false;
+
+            Gun[] rightGuns = ShopManager.instance.playerRightGuns;
+
+            //set all guns disabled
+            for (int i = 0; i < rightGuns.Length; i++)
+            {
+                rightGuns[i].gameObject.SetActive(false);
+            }
+
+            for (int i = 0; i < rightGuns.Length; i++)
+            {
+                if (rightGuns[i].gunName == RgunInButton.gunName)
+                    rightGuns[i].gameObject.SetActive(true);
+            }
         }
-
-        for (int i = 0; i < rightGuns.Length; i++)
+        else
         {
-            if (rightGuns[i].gunName == gunInButton.gunName)
-                rightGuns[i].gameObject.SetActive(true);
+            print("Not enough parts");
         }
     }
 }
