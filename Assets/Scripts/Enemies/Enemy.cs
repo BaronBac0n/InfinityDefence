@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
 
     public PhotonView pV;
 
-    float randSpeed;
+    public float randSpeed;
 
     PlayerManager playerManager;
 

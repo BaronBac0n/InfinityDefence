@@ -384,6 +384,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30454fdd73c706a4d97480bcb8d5533e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waves:
+  - waveName: Wave 1
+    enemies:
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    spawnInterval: 5
+    reward: 10
+  - waveName: Wave 2
+    enemies:
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    spawnInterval: 5
+    reward: 15
   enemyTargets:
   - {fileID: 1223437628}
   - {fileID: 1549699006}
@@ -401,8 +419,13 @@ MonoBehaviour:
   - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
   portalPrefabs:
   - {fileID: 2795387874037812169, guid: 84496ab6467218a438ede9c79557d70e, type: 3}
+  startWaveButton: {fileID: 0}
   pV: {fileID: 0}
   spawnRate: 8
+  nextSpawnTime: 0
+  canSpawn: 1
+  isSpawning: 0
+  currentWaveNumber: 0
 --- !u!1 &390999457
 GameObject:
   m_ObjectHideFlags: 0
