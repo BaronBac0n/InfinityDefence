@@ -14,13 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: b1c2d7857f1ab744d9182b487619ba37
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test  Scenes/Josh Scene.unity
     guid: 58add3e376aea114e9c6236da4929abf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test  Scenes/Hayden Scene.unity
     guid: 51e2764df81bb8d49b300520a36ae1fb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test  Scenes/Sam Scene.unity
     guid: 2491865db761e09469ac611ae9531a0d
   m_configObjects: {}

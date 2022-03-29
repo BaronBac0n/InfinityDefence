@@ -79,10 +79,12 @@ public class SciFiBeamStatic : MonoBehaviour
         if (beamLineRendererPrefab)
         {
             if (beamStartPrefab)
+            {
                 beamStart = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "BeamLaserStartBlue"), Vector3.zero, Quaternion.identity);
+            }
             if (beamEndPrefab)
                 beamEnd = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "BeamLaserEndBlue"), Vector3.zero, Quaternion.identity);
-            beam = Instantiate(beamLineRendererPrefab);
+            beam = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "BeamLaserBlue"), Vector3.zero, Quaternion.identity);
             beam.transform.position = transform.position;
             beam.transform.parent = transform;
             beam.transform.rotation = transform.rotation;
@@ -101,10 +103,10 @@ public class SciFiBeamStatic : MonoBehaviour
     public void RemoveBeam() //This function removes the prefab with linerenderer
     {
         if (beam)
-            Destroy(beam);
+             PhotonNetwork.Destroy(beam);
         if (beamStart)
-            Destroy(beamStart);
+            PhotonNetwork.Destroy(beamStart);
         if (beamEnd)
-            Destroy(beamEnd);
+            PhotonNetwork.Destroy(beamEnd);
     }
 }

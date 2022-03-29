@@ -4835,8 +4835,9 @@ MonoBehaviour:
   canShoot: 1
   ammoText: {fileID: 0}
   sprite: {fileID: 21300000, guid: a62501167c410449ebf7c4ab9cbed45a, type: 3}
-  description: shoots a laser
+  description: Laser - Shoots a constant laser
   pV: {fileID: 0}
+  bulletClone: {fileID: 0}
 --- !u!114 &6448338859756216515
 MonoBehaviour:
   m_ObjectHideFlags: 0

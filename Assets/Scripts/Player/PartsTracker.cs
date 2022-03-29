@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,14 +24,26 @@ public class PartsTracker : MonoBehaviour
 
     Text partsText;
 
+    PhotonView pV;
+
     private void Start()
     {
+        pV = GetComponent<PhotonView>();
+        pV.IsMine = true;
         partsText = GetComponent<Text>();
         UpdateText();
     }
 
     public void AddParts(int amount)
     {
+        RPC_AddParts(amount);
+    }
+
+    [PunRPC]
+    public void RPC_AddParts(int amount)
+    {
+        if (!pV.IsMine)
+            return;
         parts += amount;
         UpdateText();
     }

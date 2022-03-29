@@ -2513,6 +2513,89 @@ MonoBehaviour:
     - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
     - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
     - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    spawnInterval: 2
+    reward: 0
+  - waveName: Wave 2
+    enemies:
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    spawnInterval: 2
+    reward: 0
+  - waveName: Wave 3
+    enemies:
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    spawnInterval: 2
+    reward: 0
+  - waveName: Wave 4
+    enemies:
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    spawnInterval: 2
+    reward: 0
+  - waveName: Wave 5
+    enemies:
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    spawnInterval: 2
+    reward: 0
+  - waveName: Wave 6
+    enemies:
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    spawnInterval: 2
+    reward: 0
+  - waveName: Wave 7
+    enemies:
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    spawnInterval: 2
+    reward: 0
+  - waveName: Wave 8
+    enemies:
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    spawnInterval: 2
+    reward: 0
+  - waveName: Wave 9
+    enemies:
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
     spawnInterval: 2
     reward: 0
   enemyTargets:
