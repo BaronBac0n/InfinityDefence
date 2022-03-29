@@ -32,4 +32,8 @@ public class MachineGun : Gun
         bullet.GetComponent<BulletScript>().damage = damage;
         
     }
+
+    public override void StopShoot()
+    {
+    }
 }

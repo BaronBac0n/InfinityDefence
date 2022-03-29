@@ -67,7 +67,6 @@ public class ShopManager : MonoBehaviour
 
         //set up the player gun array
         int children = playerRightGunHolder.transform.childCount;
-        print(children);
         for (int i = 0; i < children; i++)
         {
             playerRightGuns[i] = playerRightGunHolder.transform.GetChild(i).gameObject.GetComponent<Gun>();

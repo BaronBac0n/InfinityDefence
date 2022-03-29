@@ -47,6 +47,7 @@ public abstract class Gun : MonoBehaviour
     public string description;
 
     public abstract void Shoot();
+    public abstract void StopShoot();
 
     public PhotonView pV;
 
@@ -123,6 +124,10 @@ public abstract class Gun : MonoBehaviour
                         }
 
                     }
+                }
+                else if(Input.GetMouseButtonUp(0))
+                {
+                    StopShoot();
                 }
             }
             else

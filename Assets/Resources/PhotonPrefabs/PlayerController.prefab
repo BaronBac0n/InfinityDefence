@@ -247,6 +247,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: a62501167c410449ebf7c4ab9cbed45a, type: 3}
   description: shoots a laser
   pV: {fileID: 0}
+  bulletClone: {fileID: 0}
 --- !u!114 &4695901538081992888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1254,6 +1255,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6792332628966194748}
     m_Modifications:
+    - target: {fileID: 1685670897412561640, guid: 8d5fb56dc87e9c447b208655fc349153, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3010483452154847105, guid: 8d5fb56dc87e9c447b208655fc349153, type: 3}
       propertyPath: m_Name
       value: Laser L
@@ -1313,6 +1318,18 @@ PrefabInstance:
     - target: {fileID: 5699094619940198814, guid: 8d5fb56dc87e9c447b208655fc349153, type: 3}
       propertyPath: purchased
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7588038757546107981, guid: 8d5fb56dc87e9c447b208655fc349153, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 26.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7588038757546107981, guid: 8d5fb56dc87e9c447b208655fc349153, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7588038757546107981, guid: 8d5fb56dc87e9c447b208655fc349153, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.07
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d5fb56dc87e9c447b208655fc349153, type: 3}
