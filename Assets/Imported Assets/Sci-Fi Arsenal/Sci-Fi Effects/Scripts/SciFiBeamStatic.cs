@@ -1,5 +1,7 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class SciFiBeamStatic : MonoBehaviour
@@ -77,9 +79,9 @@ public class SciFiBeamStatic : MonoBehaviour
         if (beamLineRendererPrefab)
         {
             if (beamStartPrefab)
-                beamStart = Instantiate(beamStartPrefab);
+                beamStart = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "BeamLaserStartBlue"), Vector3.zero, Quaternion.identity);
             if (beamEndPrefab)
-                beamEnd = Instantiate(beamEndPrefab);
+                beamEnd = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "BeamLaserEndBlue"), Vector3.zero, Quaternion.identity);
             beam = Instantiate(beamLineRendererPrefab);
             beam.transform.position = transform.position;
             beam.transform.parent = transform;
