@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class EquipGunButton : MonoBehaviour
 {
@@ -30,15 +31,15 @@ public class EquipGunButton : MonoBehaviour
 
         if (!LgunInButton.purchased)
         {
-            equipLeft.GetComponentInChildren<Text>().text = "Equip Left - " + LgunInButton.cost.ToString();
-            equipRight.GetComponentInChildren<Text>().text = "Equip Right - " + LgunInButton.cost.ToString();
+            equipLeft.GetComponentInChildren<TMP_Text>().text = "Equip Left - " + LgunInButton.cost.ToString();
+            equipRight.GetComponentInChildren<TMP_Text>().text = "Equip Right - " + LgunInButton.cost.ToString();
         }
         else
         {
-            equipLeft.GetComponentInChildren<Text>().text = "Equipped";
+            equipLeft.GetComponentInChildren<TMP_Text>().text = "Equipped";
             equipLeft.interactable = false;
 
-            equipRight.GetComponentInChildren<Text>().text = "Equipped";
+            equipRight.GetComponentInChildren<TMP_Text>().text = "Equipped";
             equipRight.interactable = false;
         }
     }
@@ -56,16 +57,16 @@ public class EquipGunButton : MonoBehaviour
                 buttons[i].equipLeft.interactable = true;
 
                 if (buttons[i].LgunInButton.purchased)
-                    buttons[i].equipLeft.GetComponentInChildren<Text>().text = "Equip Left";
+                    buttons[i].equipLeft.GetComponentInChildren<TMP_Text>().text = "Equip Left";
                 else
-                    buttons[i].equipLeft.GetComponentInChildren<Text>().text = "Equip Left - " + buttons[i].LgunInButton.cost.ToString();
+                    buttons[i].equipLeft.GetComponentInChildren<TMP_Text>().text = "Equip Left - " + buttons[i].LgunInButton.cost.ToString();
             }
 
             if (!LgunInButton.purchased)
                 PartsTracker.instance.RemoveParts(LgunInButton.cost);
 
             LgunInButton.purchased = true;
-            equipLeft.GetComponentInChildren<Text>().text = "Equipped";
+            equipLeft.GetComponentInChildren<TMP_Text>().text = "Equipped";
 
             equipLeft.interactable = false;
 
@@ -101,16 +102,16 @@ public class EquipGunButton : MonoBehaviour
                 buttons[i].equipRight.interactable = true;
 
                 if (buttons[i].RgunInButton.purchased)
-                    buttons[i].equipRight.GetComponentInChildren<Text>().text = "Equip Right";
+                    buttons[i].equipRight.GetComponentInChildren<TMP_Text>().text = "Equip Right";
                 else
-                    buttons[i].equipRight.GetComponentInChildren<Text>().text = "Equip Right - " + buttons[i].RgunInButton.cost.ToString();
+                    buttons[i].equipRight.GetComponentInChildren<TMP_Text>().text = "Equip Right - " + buttons[i].RgunInButton.cost.ToString();
             }
 
             if (!RgunInButton.purchased)
                 PartsTracker.instance.RemoveParts(RgunInButton.cost);
 
             RgunInButton.purchased = true;
-            equipRight.GetComponentInChildren<Text>().text = "Equipped";
+            equipRight.GetComponentInChildren<TMP_Text>().text = "Equipped";
             equipRight.interactable = false;
 
             Gun[] rightGuns = ShopManager.instance.playerRightGuns;
