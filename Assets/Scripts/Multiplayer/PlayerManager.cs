@@ -23,7 +23,6 @@ public class PlayerManager : MonoBehaviour
 
     void CreateController()
     {
-        print("A");
         Transform spawnpoint;
 
         if (PhotonNetwork.IsMasterClient)
