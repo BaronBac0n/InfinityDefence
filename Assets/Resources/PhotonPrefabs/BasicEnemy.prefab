@@ -8995,6 +8995,7 @@ MonoBehaviour:
   target: {fileID: 0}
   deathEffect: {fileID: 1739285848076908, guid: aa502400f11084d36aef2b88a2177b3e, type: 3}
   pV: {fileID: -5535073326140730350}
+  randSpeed: 0
 --- !u!54 &-2409150127415498943
 Rigidbody:
   m_ObjectHideFlags: 0

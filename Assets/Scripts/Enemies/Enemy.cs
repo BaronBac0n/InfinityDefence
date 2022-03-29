@@ -7,7 +7,7 @@ using System.IO;
 
 public class Enemy : MonoBehaviour
 {
-    public int maxHealth, currentHealth;
+    public float maxHealth, currentHealth;
 
     public Vector2 speed;
     public int damageToPlayer;
@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, target.position, step);
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         pV.RPC("RPC_TakeDamage", RpcTarget.All, amount);
 
@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour
     }
 
     [PunRPC]
-    void RPC_TakeDamage(int amount)
+    void RPC_TakeDamage(float amount)
     {
         if (!pV.IsMine)
             return;
@@ -82,6 +82,11 @@ public class Enemy : MonoBehaviour
             PlayerHealth.instance.TakeDamage(damageToPlayer);
             GameObject deathEffectClone = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Explosion_01"), transform.position, transform.rotation);
             PhotonNetwork.Destroy(gameObject);
+        }
+
+        if(other.tag == "LaserBeam")
+        {
+            TakeDamage(0.4f);
         }
     }
 }

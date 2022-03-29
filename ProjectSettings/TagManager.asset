@@ -12,6 +12,7 @@ TagManager:
   - LeftGun
   - RightGun
   - StartButton
+  - LaserBeam
   layers:
   - Default
   - TransparentFX

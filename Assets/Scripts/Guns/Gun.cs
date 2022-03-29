@@ -156,7 +156,10 @@ public abstract class Gun : MonoBehaviour
                         }
                     }
                 }
-
+                else if (Input.GetMouseButtonUp(1))
+                {
+                    StopShoot();
+                }
             }
         }
 
