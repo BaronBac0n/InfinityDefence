@@ -29,7 +29,6 @@ public class PartsTracker : MonoBehaviour
     private void Start()
     {
         pV = GetComponent<PhotonView>();
-        pV.IsMine = true;
         partsText = GetComponent<Text>();
         UpdateText();
     }

@@ -44,4 +44,27 @@ public class ShootingEnemies : Enemy
         yield return new WaitForSeconds(timeBetweenShots);
         canShoot = true;
     }
+
+    public void TakeDamage(float amount)
+    {
+        pV.RPC("RPC_TakeDamage", RpcTarget.All, amount);
+
+        //currentHealth -= amount;
+        //if(DeathCheck())
+        //{
+        //    Die();
+        //}
+    }
+
+    [PunRPC]
+    void RPC_TakeDamage(float amount)
+    {
+        if (!pV.IsMine)
+            return;
+        currentHealth -= amount;
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
 }
