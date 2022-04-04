@@ -75,16 +75,22 @@ public class Enemy : MonoBehaviour
         PhotonNetwork.Destroy(gameObject);
     }
 
+    [PunRPC]
+    void RPC_DealDamage(int amount)
+    {
+        PlayerHealth.instance.TakeDamage(amount);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "EnemyTarget")
+        if (other.tag == "EnemyTarget")
         {
-            PlayerHealth.instance.TakeDamage(damageToPlayer);
+            pV.RPC("RPC_DealDamage", RpcTarget.All, damageToPlayer);
             GameObject deathEffectClone = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Explosion_01"), transform.position, transform.rotation);
             PhotonNetwork.Destroy(gameObject);
         }
 
-        if(other.tag == "LaserBeam")
+        if (other.tag == "LaserBeam")
         {
             TakeDamage(0.4f);
         }

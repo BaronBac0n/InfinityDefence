@@ -1,4 +1,5 @@
 using EZCameraShake;
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,6 +32,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        healthText = GameObject.FindGameObjectWithTag("Health Text").GetComponent<Text>();
         healthText.text = currentHealth.ToString();
     }
     
@@ -38,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
     {
         
     }
-
+    [PunRPC]
     public void TakeDamage(int amount)
     {
         camerasToShake = GameObject.FindGameObjectsWithTag("Camera Holder");

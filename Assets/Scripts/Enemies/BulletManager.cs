@@ -18,11 +18,17 @@ public class BulletManager : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed);
     }
 
+    [PunRPC]
+    void RPC_DealDamage(int amount)
+    {
+        PlayerHealth.instance.TakeDamage(amount);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "EnemyTarget")
         {
-            PlayerHealth.instance.TakeDamage(damage);
+            GetComponent<PhotonView>().RPC("RPC_DealDamage", RpcTarget.All, damage);
             PhotonNetwork.Destroy(gameObject);
         }
     }

@@ -31,7 +31,10 @@ public class PlayerManager : MonoBehaviour
             spawnpoint = GameObject.Find("Player2Spawn").transform;
 
         PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController"), spawnpoint.position, Quaternion.identity);
-        Instantiate(playerUI);
+        GameObject UIClone = Instantiate(playerUI);
+        GameObject hText = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Health Text"), Vector3.zero, Quaternion.identity);
+        hText.transform.parent = UIClone.transform.GetChild(0).transform.GetChild(2).transform;
+        hText.GetComponent<Transform>().position = hText.transform.parent.position;
        // playerClone.GetComponent<PlayerRotate>().enabled = true;
     }
 }
