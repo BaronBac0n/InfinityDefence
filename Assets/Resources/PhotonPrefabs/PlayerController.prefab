@@ -899,6 +899,7 @@ MonoBehaviour:
   currentHealth: 0
   healthText: {fileID: 0}
   camerasToShake: []
+  endScreen: {fileID: 0}
 --- !u!1 &8068740823597549915
 GameObject:
   m_ObjectHideFlags: 0

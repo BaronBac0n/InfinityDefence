@@ -34,7 +34,8 @@ public class SciFiBeamStatic : MonoBehaviour
     private void OnEnable()
     {
         if (alwaysOn) //When the object this script is attached to is enabled, spawn the beam.
-            SpawnBeam();
+
+            GetComponent<PhotonView>().RPC("SpawnBeam", RpcTarget.All);
     }
 
     private void OnDisable() //If the object this script is attached to is disabled, remove the beam.
@@ -73,7 +74,8 @@ public class SciFiBeamStatic : MonoBehaviour
             line.material.mainTextureOffset -= new Vector2(Time.deltaTime * textureScrollSpeed, 0); //This scrolls the texture along the beam if not set to 0
         }
     }
-
+    
+    [PunRPC]
     public void SpawnBeam() //This function spawns the prefab with linerenderer
     {
         if (beamLineRendererPrefab)
@@ -100,6 +102,7 @@ public class SciFiBeamStatic : MonoBehaviour
             print("Add a hecking prefab with a line renderer to the SciFiBeamStatic script on " + gameObject.name + "! Heck!");
     }
 
+    [PunRPC]
     public void RemoveBeam() //This function removes the prefab with linerenderer
     {
         if (beam)
