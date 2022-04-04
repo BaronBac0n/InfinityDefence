@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19528377, g: 0.097322635, b: 0.1191001, a: 1}
+  m_IndirectSpecularColor: {r: 0.19413146, g: 0.095835455, b: 0.116569154, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -580,9 +580,9 @@ MonoBehaviour:
     - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
     - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
     - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
-    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
-    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
-    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 1015305176084102, guid: b836b37f1782e7f4cbc3520d89210c8b, type: 3}
+    - {fileID: 1015305176084102, guid: b836b37f1782e7f4cbc3520d89210c8b, type: 3}
+    - {fileID: 1015305176084102, guid: b836b37f1782e7f4cbc3520d89210c8b, type: 3}
     spawnInterval: 2
     reward: 0
   - waveName: Wave 2
@@ -590,9 +590,9 @@ MonoBehaviour:
     - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
     - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
     - {fileID: 6877269227643831046, guid: 1706a60d01f365e4bb72d8be48d2b3c7, type: 3}
-    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
-    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
-    - {fileID: 6877269227643831046, guid: 2054c837c1b6e754cba28738877191fe, type: 3}
+    - {fileID: 1015305176084102, guid: b836b37f1782e7f4cbc3520d89210c8b, type: 3}
+    - {fileID: 1015305176084102, guid: b836b37f1782e7f4cbc3520d89210c8b, type: 3}
+    - {fileID: 1015305176084102, guid: b836b37f1782e7f4cbc3520d89210c8b, type: 3}
     spawnInterval: 2
     reward: 0
   - waveName: Wave 3

@@ -29,6 +29,8 @@ public class PlayerHealth : MonoBehaviour
 
     public GameObject[] camerasToShake;
 
+    public GameObject endScreen;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -38,6 +40,10 @@ public class PlayerHealth : MonoBehaviour
     
     void Update()
     {
+        if(endScreen == null)
+        {
+            endScreen = GameObject.FindGameObjectWithTag("Game Over Panel").transform.GetChild(0).gameObject;
+        }
         
     }
     [PunRPC]
@@ -47,7 +53,6 @@ public class PlayerHealth : MonoBehaviour
         for(int i = 0; i < camerasToShake.Length; i++)
         {
             camerasToShake[i].GetComponent<CameraShaker>().ShakeOnce(4f, 4f, 0.1f, 1f); ;
-            print("A");
         }
         currentHealth -= amount;
         healthText.text = currentHealth.ToString();
@@ -65,6 +70,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void Die()
     {
-        print("YOU DEAD");
+        endScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 }

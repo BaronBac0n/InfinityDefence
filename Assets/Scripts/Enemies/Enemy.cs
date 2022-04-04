@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour
 
     PlayerManager playerManager;
 
+    public bool flipLookAt;
+
     void Start()
     {
         pV = GetComponent<PhotonView>();
@@ -47,6 +49,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        print("!working");
         pV.RPC("RPC_TakeDamage", RpcTarget.All, amount);
 
         //currentHealth -= amount;
@@ -70,7 +73,7 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
-        PartsTracker.instance.AddParts(partsDropped);
+        PartsTracker.instance.pV.RPC("RPC_AddParts", RpcTarget.All, partsDropped);
         PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Explosion_01"), transform.position, transform.rotation);
         PhotonNetwork.Destroy(gameObject);
     }

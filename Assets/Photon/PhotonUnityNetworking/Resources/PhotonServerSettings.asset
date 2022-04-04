@@ -44,6 +44,8 @@ MonoBehaviour:
   - RPC_AddParts
   - RPC_DealDamage
   - TakeDamage
+  - SpawnBeam
+  - RemoveBeam
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

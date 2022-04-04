@@ -35,6 +35,9 @@ public class PlayerManager : MonoBehaviour
         GameObject hText = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Health Text"), Vector3.zero, Quaternion.identity);
         hText.transform.parent = UIClone.transform.GetChild(0).transform.GetChild(2).transform;
         hText.GetComponent<Transform>().position = hText.transform.parent.position;
-       // playerClone.GetComponent<PlayerRotate>().enabled = true;
+
+        GameObject pText = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Parts text"), Vector3.zero, Quaternion.identity);
+        pText.transform.parent = UIClone.transform.GetChild(5).transform;
+        pText.GetComponent<Transform>().position = pText.transform.parent.position;
     }
 }
