@@ -23,8 +23,7 @@ public class PartsTracker : MonoBehaviour
     public int parts;
 
     Text partsText;
-
-    PhotonView pV;
+    public PhotonView pV;
 
     private void Start()
     {
@@ -35,22 +34,24 @@ public class PartsTracker : MonoBehaviour
 
     public void AddParts(int amount)
     {
-        RPC_AddParts(amount);
+        pV.RPC("RPC_AddParts", RpcTarget.All, amount);
     }
 
     [PunRPC]
     public void RPC_AddParts(int amount)
     {
-        if (!pV.IsMine)
-            return;
+        //if (pV.IsMine)
         parts += amount;
-        UpdateText();
+
+        partsText.text = parts.ToString();
+        //UpdateText();
     }
 
     public void RemoveParts(int amount)
     {
         parts -= amount;
-        UpdateText();
+        partsText.text = parts.ToString();
+        //UpdateText();
     }
 
     public void UpdateText()

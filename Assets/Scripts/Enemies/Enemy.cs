@@ -70,7 +70,7 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
-        PartsTracker.instance.AddParts(partsDropped);
+        PartsTracker.instance.pV.RPC("RPC_AddParts", RpcTarget.All, partsDropped);
         PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Explosion_01"), transform.position, transform.rotation);
         PhotonNetwork.Destroy(gameObject);
     }
