@@ -4823,8 +4823,8 @@ MonoBehaviour:
   cost: 20
   purchased: 0
   bulletSpeed: 10
-  maxAmmoInMag: 99999999
-  ammoInMag: 99999999
+  maxAmmoInMag: 100
+  ammoInMag: 100
   fpsCam: {fileID: 0}
   reloading: 0
   projectileSpawner: {fileID: 2719832898554664952}

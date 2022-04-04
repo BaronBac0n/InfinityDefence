@@ -66,7 +66,7 @@ public abstract class Gun : MonoBehaviour
         pV = GetComponent<PhotonView>();
     }
 
-    void Update()
+    public void Update()
     {
         if (!pV.IsMine)
             return;
@@ -100,7 +100,7 @@ public abstract class Gun : MonoBehaviour
         {
             if (isLeftGun)
             {
-                if (Input.GetAxis("Fire1") > 0.1f && Time.time >= nextTimeToFire)
+                if (Input.GetAxis("Fire1") > 0.1f && Time.time >= nextTimeToFire && ammoInMag > 0)
                 {
                     if (isProjectileWeapon)
                     {
@@ -126,14 +126,14 @@ public abstract class Gun : MonoBehaviour
 
                     }
                 }
-                else if(Input.GetMouseButtonUp(0))
+                else if (Input.GetMouseButtonUp(0))
                 {
                     StopShoot();
                 }
             }
             else
             {
-                if (Input.GetAxis("Fire2") > 0.1f && Time.time >= nextTimeToFire)
+                if (Input.GetAxis("Fire2") > 0.1f && Time.time >= nextTimeToFire && ammoInMag > 0)
                 {
                     if (isProjectileWeapon)
                     {

@@ -43,6 +43,11 @@ public class PlayerHealth : MonoBehaviour
     [PunRPC]
     public void TakeDamage(int amount)
     {
+        camerasToShake = GameObject.FindGameObjectsWithTag("Camera Holder");
+        for(int i = 0; i < camerasToShake.Length; i++)
+        {
+            camerasToShake[i].GetComponent<CameraShaker>().ShakeOnce(4f, 4f, 0.1f, 1f); ;
+        }
         currentHealth -= amount;
         healthText.text = currentHealth.ToString();
         if (DeathCheck())
