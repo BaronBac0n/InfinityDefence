@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class ShootingEnemies : Enemy
 {
-    public GameObject shooterSpawner;
+    public GameObject shooterSpawner1;
+    public GameObject shooterSpawner2;
 
     public float timeBetweenShots;
 
@@ -20,7 +21,7 @@ public class ShootingEnemies : Enemy
 
     void Update()
     {
-        transform.LookAt(2 * transform.position - target.position);
+        transform.LookAt(target.position);
 
         if (Vector3.Distance(transform.position, target.transform.position) <= 25.5f)
         {
@@ -36,10 +37,14 @@ public class ShootingEnemies : Enemy
     IEnumerator Shoot()
     {
         canShoot = false;
-        GameObject bulletClone = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Enemy Bullet"), shooterSpawner.transform.position, Quaternion.identity);
+        GameObject bulletClone = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Enemy Bullet"), shooterSpawner1.transform.position, Quaternion.identity);
+        GameObject bulletClone1 = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Enemy Bullet"), shooterSpawner2.transform.position, Quaternion.identity);
         bulletClone.SetActive(true);
+        bulletClone1.SetActive(true);
         bulletClone.transform.LookAt(target.transform);
+        bulletClone1.transform.LookAt(target.transform);
         bulletClone.GetComponent<BulletManager>().target = target;
+        bulletClone1.GetComponent<BulletManager>().target = target;
 
         yield return new WaitForSeconds(timeBetweenShots);
         canShoot = true;
@@ -47,6 +52,7 @@ public class ShootingEnemies : Enemy
 
     public void TakeDamage(float amount)
     {
+        print("working");
         pV.RPC("RPC_TakeDamage", RpcTarget.All, amount);
 
         //currentHealth -= amount;

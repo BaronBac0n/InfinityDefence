@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour
 
     PlayerManager playerManager;
 
+    public bool flipLookAt;
+
     void Start()
     {
         pV = GetComponent<PhotonView>();
@@ -47,6 +49,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        print("!working");
         pV.RPC("RPC_TakeDamage", RpcTarget.All, amount);
 
         //currentHealth -= amount;
