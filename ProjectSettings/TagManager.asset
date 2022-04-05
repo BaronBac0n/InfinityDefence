@@ -15,6 +15,7 @@ TagManager:
   - LaserBeam
   - Health Text
   - Game Over Panel
+  - You Win Panel
   layers:
   - Default
   - TransparentFX

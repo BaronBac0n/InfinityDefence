@@ -27,6 +27,8 @@ public class EnemySpawner : MonoBehaviour
 
     public PhotonView pV;
 
+    public GameObject winMessage;
+
     public float spawnRate;
     public float nextSpawnTime;
 
@@ -46,8 +48,10 @@ public class EnemySpawner : MonoBehaviour
         {
             startWaveButton = GameObject.FindGameObjectWithTag("StartButton").GetComponent<Button>();
             startWaveButton.onClick.AddListener(this.setSpawning);
-        }
 
+            startWaveButton.interactable = PhotonNetwork.IsMasterClient;
+        }
+        print(currentWaveNumber);
         if (isSpawning == true)
         {
             //currentWaveDisplay.text = "Wave: " + currentWave.waveName;
@@ -63,9 +67,10 @@ public class EnemySpawner : MonoBehaviour
                 isSpawning = false;
                 canSpawn = true;
             }
-            if (totalEnemies.Length == 0 && currentWaveNumber == 25)
+            if (totalEnemies.Length == 0 && currentWaveNumber == waves.Length)
             {
-                //winMessage.SetActive(true);
+                winMessage = GameObject.FindGameObjectWithTag("You Win Panel").transform.GetChild(0).gameObject;
+                winMessage.SetActive(true);
                 Destroy(startWaveButton);
                 //Destroy(speedUpButton);
                 Time.timeScale = 1;

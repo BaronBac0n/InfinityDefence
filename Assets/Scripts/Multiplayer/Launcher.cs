@@ -19,7 +19,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         instance = this;
     }
     #endregion
-
+    
     [SerializeField]
     InputField roomNameInputField;
 

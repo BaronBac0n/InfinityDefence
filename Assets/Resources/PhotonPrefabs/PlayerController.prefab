@@ -1067,6 +1067,14 @@ PrefabInstance:
       propertyPath: purchased
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6000571947781825172, guid: 8d5fb56dc87e9c447b208655fc349153, type: 3}
+      propertyPath: ammoInMag
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000571947781825172, guid: 8d5fb56dc87e9c447b208655fc349153, type: 3}
+      propertyPath: maxAmmoInMag
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 7588038757546107981, guid: 8d5fb56dc87e9c447b208655fc349153, type: 3}
       propertyPath: m_LocalPosition.x
       value: 26.05
@@ -1356,8 +1364,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6000571947781825172, guid: 8d5fb56dc87e9c447b208655fc349153, type: 3}
+      propertyPath: ammoInMag
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000571947781825172, guid: 8d5fb56dc87e9c447b208655fc349153, type: 3}
       propertyPath: isLeftGun
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000571947781825172, guid: 8d5fb56dc87e9c447b208655fc349153, type: 3}
+      propertyPath: maxAmmoInMag
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 7588038757546107981, guid: 8d5fb56dc87e9c447b208655fc349153, type: 3}
       propertyPath: m_LocalPosition.x

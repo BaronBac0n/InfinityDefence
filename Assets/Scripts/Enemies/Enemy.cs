@@ -95,7 +95,7 @@ public class Enemy : MonoBehaviour
 
         if (other.tag == "LaserBeam")
         {
-            TakeDamage(0.4f);
+            //TakeDamage(0.4f);
         }
     }
 }
