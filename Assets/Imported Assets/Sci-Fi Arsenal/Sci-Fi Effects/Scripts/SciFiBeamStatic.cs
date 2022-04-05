@@ -52,7 +52,13 @@ public class SciFiBeamStatic : MonoBehaviour
             Vector3 end;
             RaycastHit hit;
             if (beamCollides && Physics.Raycast(transform.position, transform.forward, out hit)) //Checks for collision
+            {
                 end = hit.point - (transform.forward * beamEndOffset);
+                if(hit.transform.tag == "Enemy")
+                {
+                    hit.transform.root.GetComponent<Enemy>().TakeDamage(0.65f);
+                }
+            }
             else
                 end = transform.position + (transform.forward * beamLength);
 

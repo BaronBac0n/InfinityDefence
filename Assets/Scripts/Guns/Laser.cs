@@ -77,7 +77,6 @@ public class Laser : Gun
 
     public override void StopShoot()
     {
-        print("A)");
         isShooting = false;
         PhotonNetwork.Destroy(bulletClone);
     }

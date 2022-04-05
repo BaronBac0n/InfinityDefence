@@ -95,71 +95,73 @@ public abstract class Gun : MonoBehaviour
         {
             StartCoroutine(Reload());
         }
-
-        if (canShoot)
+        //if (!EventSystem.current.IsPointerOverGameObject())
         {
-            if (isLeftGun)
+            if (canShoot)
             {
-                if (Input.GetAxis("Fire1") > 0.1f && Time.time >= nextTimeToFire && ammoInMag > 0)
+                if (isLeftGun)
                 {
-                    if (isProjectileWeapon)
+                    if (Input.GetAxis("Fire1") > 0.1f && Time.time >= nextTimeToFire && ammoInMag > 0)
                     {
-                        if (ammoInMag > 0)
+                        if (isProjectileWeapon)
                         {
-                            //shoot
-                            nextTimeToFire = Time.time + 1 / fireRate;
-                            Shoot();
-                            //anim.SetBool("isShooting", true);
+                            if (ammoInMag > 0)
+                            {
+                                //shoot
+                                nextTimeToFire = Time.time + 1 / fireRate;
+                                Shoot();
+                                //anim.SetBool("isShooting", true);
+                            }
+                            else
+                            {
+                                StartCoroutine(Reload());
+                            }
                         }
                         else
                         {
-                            StartCoroutine(Reload());
-                        }
-                    }
-                    else
-                    {
-                        if (ammoInMag > 0)
-                        {
-                            //shoot
-                            Shoot();
-                        }
+                            if (ammoInMag > 0)
+                            {
+                                //shoot
+                                Shoot();
+                            }
 
+                        }
+                    }
+                    else if (Input.GetMouseButtonUp(0))
+                    {
+                        StopShoot();
                     }
                 }
-                else if (Input.GetMouseButtonUp(0))
+                else
                 {
-                    StopShoot();
-                }
-            }
-            else
-            {
-                if (Input.GetAxis("Fire2") > 0.1f && Time.time >= nextTimeToFire && ammoInMag > 0)
-                {
-                    if (isProjectileWeapon)
+                    if (Input.GetAxis("Fire2") > 0.1f && Time.time >= nextTimeToFire && ammoInMag > 0)
                     {
-                        if (ammoInMag > 0)
+                        if (isProjectileWeapon)
                         {
-                            //shoot
-                            nextTimeToFire = Time.time + 1 / fireRate;
-                            Shoot();
-                            //anim.SetBool("isShooting", true);
+                            if (ammoInMag > 0)
+                            {
+                                //shoot
+                                nextTimeToFire = Time.time + 1 / fireRate;
+                                Shoot();
+                                //anim.SetBool("isShooting", true);
+                            }
+                            else
+                            {
+                                StartCoroutine(Reload());
+                            }
                         }
                         else
                         {
-                            StartCoroutine(Reload());
+                            if (ammoInMag > 0)
+                            {
+                                Shoot();
+                            }
                         }
                     }
-                    else
+                    else if (Input.GetMouseButtonUp(1))
                     {
-                        if (ammoInMag > 0)
-                        {
-                            Shoot();
-                        }
+                        StopShoot();
                     }
-                }
-                else if (Input.GetMouseButtonUp(1))
-                {
-                    StopShoot();
                 }
             }
         }

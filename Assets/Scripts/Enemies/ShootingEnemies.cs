@@ -9,9 +9,14 @@ public class ShootingEnemies : Enemy
     public GameObject shooterSpawner1;
     public GameObject shooterSpawner2;
 
+    public float startShootingDistance;
+    public float stopMovingDistance;
+
     public float timeBetweenShots;
 
     private bool canShoot = true;
+
+
     void Start()
     {
         pV = GetComponent<PhotonView>();
@@ -21,14 +26,17 @@ public class ShootingEnemies : Enemy
 
     void Update()
     {
-        transform.LookAt(target.position);
-
-        if (Vector3.Distance(transform.position, target.transform.position) <= 25.5f)
-        {
-            if(canShoot)
-            StartCoroutine(Shoot());
-        }
+        if (flipLookAt)
+            transform.LookAt(target.position);
         else
+            transform.LookAt(2 * transform.position - target.position);
+
+        if (Vector3.Distance(transform.position, target.transform.position) <= startShootingDistance)
+        {
+            if (canShoot)
+                StartCoroutine(Shoot());
+        }
+        else if(Vector3.Distance(transform.position, target.transform.position) >= stopMovingDistance)
         {
             MoveTowardTarget();
         }
