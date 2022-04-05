@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: b1c2d7857f1ab744d9182b487619ba37
+  - enabled: 1
+    path: Assets/Scenes/Info Scene.unity
+    guid: 24d05ada8132c0048b202cf721ac1573
   - enabled: 0
     path: Assets/Scenes/Test  Scenes/Josh Scene.unity
     guid: 58add3e376aea114e9c6236da4929abf
