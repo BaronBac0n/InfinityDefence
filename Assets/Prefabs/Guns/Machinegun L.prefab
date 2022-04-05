@@ -120,6 +120,7 @@ MonoBehaviour:
   range: 0
   fireRate: 5
   reloadTime: 2
+  isProjectileWeapon: 0
   cost: 10
   purchased: 0
   bulletSpeed: 10
@@ -134,7 +135,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   canShoot: 1
   ammoText: {fileID: 0}
-  sprite: {fileID: 21300000, guid: 3ac09465794fb4f9c899851d21d7348c, type: 3}
+  sprite: {fileID: 21300000, guid: c435ad887356e474f8ae10907c3a1835, type: 3}
   description: Basic full auto machine gun
   pV: {fileID: 0}
 --- !u!95 &5232892535859237004

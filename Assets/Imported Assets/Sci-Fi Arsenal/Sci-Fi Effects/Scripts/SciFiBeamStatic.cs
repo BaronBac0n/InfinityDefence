@@ -56,7 +56,7 @@ public class SciFiBeamStatic : MonoBehaviour
                 end = hit.point - (transform.forward * beamEndOffset);
                 if(hit.transform.tag == "Enemy")
                 {
-                    hit.transform.root.GetComponent<Enemy>().TakeDamage(0.4f);
+                    hit.transform.root.GetComponent<Enemy>().TakeDamage(0.65f);
                 }
             }
             else
