@@ -24,6 +24,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject[] portalPrefabs;
 
     public Button startWaveButton;
+    public Button shopButton;
 
     public PhotonView pV;
 
@@ -44,6 +45,9 @@ public class EnemySpawner : MonoBehaviour
     
     void Update()
     {
+        shopButton = GameObject.FindGameObjectWithTag("Shop Button").GetComponent<Button>();
+        shopButton.interactable = !isSpawning;
+
         if(startWaveButton == null)
         {
             startWaveButton = GameObject.FindGameObjectWithTag("StartButton").GetComponent<Button>();
@@ -51,7 +55,6 @@ public class EnemySpawner : MonoBehaviour
 
             startWaveButton.interactable = PhotonNetwork.IsMasterClient;
         }
-        print(currentWaveNumber);
         if (isSpawning == true)
         {
             //currentWaveDisplay.text = "Wave: " + currentWave.waveName;

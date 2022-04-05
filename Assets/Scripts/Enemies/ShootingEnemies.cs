@@ -15,6 +15,8 @@ public class ShootingEnemies : Enemy
     public float timeBetweenShots;
 
     private bool canShoot = true;
+
+
     void Start()
     {
         pV = GetComponent<PhotonView>();

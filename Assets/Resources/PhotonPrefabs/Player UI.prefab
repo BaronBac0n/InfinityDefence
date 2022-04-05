@@ -2927,6 +2927,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Show Shop
       objectReference: {fileID: 0}
+    - target: {fileID: 1403839275763045296, guid: bebd7ac5ae1044805aace1ed631f455f, type: 3}
+      propertyPath: m_TagString
+      value: Shop Button
+      objectReference: {fileID: 0}
     - target: {fileID: 1403839275763045297, guid: bebd7ac5ae1044805aace1ed631f455f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
