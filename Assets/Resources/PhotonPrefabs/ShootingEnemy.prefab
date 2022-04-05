@@ -117,16 +117,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
-  speed: {x: 3, y: 3.5}
+  speed: {x: 3.5, y: 4}
   damageToPlayer: 10
   partsDropped: 20
   target: {fileID: 0}
   deathEffect: {fileID: 0}
   pV: {fileID: -1284131426501380534}
   randSpeed: 0
-  flipLookAt: 0
+  flipLookAt: 1
   shooterSpawner1: {fileID: 9102535247841701177}
   shooterSpawner2: {fileID: 919856787335668681}
+  startShootingDistance: 40
+  stopMovingDistance: 25.5
   timeBetweenShots: 2
 --- !u!1 &1016197006162730
 GameObject:
@@ -15929,7 +15931,7 @@ GameObject:
   - component: {fileID: 3906785618097888374}
   - component: {fileID: 2155489306866365523}
   - component: {fileID: 4600061141997580124}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shooter 2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -41697,7 +41699,7 @@ GameObject:
   - component: {fileID: 2231962343841831278}
   - component: {fileID: 4436122775587775748}
   - component: {fileID: 8712736130301385667}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shooter 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
